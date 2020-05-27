@@ -35,9 +35,9 @@ int mylist_init(void)
 		list_add(&(pstudent[i].list), &student_list);
 	}
 
-	list_for_each(pos, &student_list)
+	list_for_each(pos, &student_list)//pos为struct list_head *类型的指针，student_list为struct list_head类型
 	{
-		tmp_student = list_entry(pos, struct student, list);
+		tmp_student = list_entry(pos, struct student, list);//从这能看出来循环遍历的是节点类型为struct student的链表
 		printk("<0>student %d name:%s\n", tmp_student->num, tmp_student->name);
 	}
 	
